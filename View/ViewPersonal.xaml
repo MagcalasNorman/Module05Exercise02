@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Module05Exercise01.ViewModel"
+             x:Class="Module05Exercise01.View.ViewPersonal"
+             Title="Employee List">
+    <ScrollView>
+    <VerticalStackLayout Spacing="5">
+        <Label
+        Text="Employee Information"
+        FontSize="20"
+        HorizontalOptions="Center"/>
+
+        <ListView ItemsSource="{Binding PersonalList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame
+                            BorderColor="Gray"        
+                            CornerRadius="5"
+                            Padding="0"
+                            Margin="5"
+                            HasShadow="True">
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Name}" FontSize="16"/>
+                                <Label Text="{Binding Address}" FontSize="14" TextColor="Gray"/>
+                                <Label Text="{Binding Email}" FontSize="14" TextColor="Gray"/>
+                                <Label Text="{Binding ContactNo}" FontSize="14" TextColor="Gray"/>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type local:PersonalViewModel}}, Path=SelectedEmployeeCommand}"
+                                                          CommandParameter="{Binding .}"/>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Refresh List" Command="{Binding LoadDataCommand}"/>
+        
+        <Button Text="Go Back To Main Menu"
+               Clicked="BackMenu"
+               VerticalOptions="End"/>
+
+        <Label x:Name="ConnectionStatusLabel"
+             Text="{Binding statusMessage}"
+             FontSize="18"
+            HorizontalOptions="Center"/>
+
+        <Label Text="Add New Employee"
+               FontSize="Large"/>
+
+        <Entry Placeholder="Name"
+               Text="{Binding NewEmployeeName}"/>
+
+        <Entry Placeholder="Address"
+               Text="{Binding NewEmployeeAddress}"/>
+        
+        <Entry Placeholder="Email"
+               Text="{Binding NewEmployeeEmail}"/>
+
+        <Entry Placeholder="ContactNo"
+               Text="{Binding NewEmployeeContactNo}"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            
+            <Button Text="Add Employee" 
+                    Command="{Binding InsertEmployeeCommand}"/>
+
+            <Button Text="Delete Employee" 
+                    Command="{Binding DeleteEmployeeCommand}"
+                    IsEnabled="{Binding IsEmployeeSelected}"/>
+
+        </StackLayout>
+
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
