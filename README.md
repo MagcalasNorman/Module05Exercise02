@@ -1,2 +1,7 @@
-![image](https://github.com/user-attachments/assets/90e53f11-92c2-49ab-a979-e92379cc6155)
-![image](https://github.com/user-attachments/assets/6f3fa97f-f1cc-4749-a743-45416833da7c)
+![image](https://github.com/user-attachments/assets/1df7349f-256b-45d3-93d3-bcc2cd7fb021)
+New Employee Added
+![image](https://github.com/user-attachments/assets/1116f8e6-c7f7-4ede-9588-315d64ffd24e)
+Delete Alert
+![image](https://github.com/user-attachments/assets/fa1713d2-dabd-40f4-af14-06bf6929e218)
+Successful Deletion
+![image](https://github.com/user-attachments/assets/be128aea-7453-4e8e-98ef-a3fa4df8a9d0)
